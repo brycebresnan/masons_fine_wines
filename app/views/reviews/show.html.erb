@@ -1,0 +1,16 @@
+<h1>Author: <%= @review.author %></h1>
+<h2>Wine: <%= @product.name %></h2>
+<h3>" <%= @review.content_body %> "</h3>
+<h3>Rating: <%= @review.rating %></h3>
+
+<%= button_to "Edit Review", 
+              edit_product_review_path(@product, @review), 
+              method: :get %>
+
+<%= button_to "Delete Review", 
+              product_review_path(@product, @review),
+              method: :delete %>
+
+<%= button_to "Return to Wine Lise", 
+              products_path(@product), 
+              method: :get %>
