@@ -1,5 +1,14 @@
 class Product < ApplicationRecord
   has_many :reviews, dependent: :destroy
+
+  scope :most_reviews, -> {(
+    select("products.id, products.name, products.country_of_origin, products.cost, count(reviews.id) as products_count")
+    .joins(:reviews)
+    .group("products.id")
+    .order("products_count DESC")
+    .limit(1)
+  )}
+
   validates :name, presence: true
   validates :country_of_origin, presence: true
   validates :cost, presence: true
@@ -11,4 +20,6 @@ class Product < ApplicationRecord
     def titleize_product
       self.name = self.name.titleize
     end
+
+  
 end
