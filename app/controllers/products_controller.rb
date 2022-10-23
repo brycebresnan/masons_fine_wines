@@ -52,6 +52,7 @@ class ProductsController < ApplicationController
   def landing
     @product_most = Product.most_reviews
     @product_recent = Product.recently_added_three
+    @product_american = Product.american_origin
     render :landing
   end
 

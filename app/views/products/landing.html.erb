@@ -21,3 +21,14 @@
 <% else %>
   <p>There are no wines to view.</p>
 <% end %>
+
+<h3>American Wine:</h3>
+<% if @product_american.any? %>
+  <ul>
+    <% @product_american.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no wines to view.</p>
+<% end %>

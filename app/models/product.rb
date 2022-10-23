@@ -11,6 +11,8 @@ class Product < ApplicationRecord
 
   scope :recently_added_three, -> {order(created_at: :desc).limit(3)}
 
+  scope :american_origin, -> {where("country_of_origin =?", "USA")}
+
   validates :name, presence: true
   validates :country_of_origin, presence: true
   validates :cost, presence: true
