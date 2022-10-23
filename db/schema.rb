@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_23_065007) do
     t.string "country_of_origin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "cost"
+    t.decimal "cost", precision: 8, scale: 2
   end
 
   create_table "reviews", force: :cascade do |t|
