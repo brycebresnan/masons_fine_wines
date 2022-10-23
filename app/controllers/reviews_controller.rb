@@ -30,10 +30,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    # Code for updating an review goes here.
-  end
-
-  def update
     @review= Review.find(params[:id])
     if @review.update(review_params)
       redirect_to reviews_path
