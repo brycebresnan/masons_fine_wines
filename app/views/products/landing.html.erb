@@ -10,3 +10,14 @@
 <% else %>
   <p>There are no wines to view.</p>
 <% end %>
+
+<h3>Newly Added Wine:</h3>
+<% if @product_recent.any? %>
+  <ul>
+    <% @product_recent.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no wines to view.</p>
+<% end %>

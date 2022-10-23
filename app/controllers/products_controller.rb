@@ -51,6 +51,7 @@ class ProductsController < ApplicationController
 
   def landing
     @product_most = Product.most_reviews
+    @product_recent = Product.recently_added_three
     render :landing
   end
 
