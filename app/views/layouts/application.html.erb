@@ -10,11 +10,13 @@
   </head>
 
   <body>
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
-    
-    <%= yield %>
-    
-    <a href="/">Home</a>
+    <div class="container">
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+      
+      <%= yield %>
+      
+      <a href="/">Home</a>
+    </div>
   </body>
 </html>
