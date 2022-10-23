@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review has been created successfully!"
       redirect_to product_path(@product)
     else
+      flash[:alert] = "Something went wrong :/"
       render :new, status: :unprocessable_entity
     end
   end
@@ -40,6 +41,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review has been updated."
       redirect_to product_path(@review.product)
     else
+      flash[:alert] = "Something went wrong :/"
       @product = Product.find(params[:product_id])
       render :edit, status: :unprocessable_entity
     end
