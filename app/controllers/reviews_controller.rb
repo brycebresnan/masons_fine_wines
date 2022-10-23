@@ -1,4 +1,4 @@
-class ProductsControler < ApplicationController
+class ProductsController < ApplicationController
   
   def index
     @reviews = Review.all
