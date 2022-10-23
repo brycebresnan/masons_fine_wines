@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
+      flash[:notice] = "Wine has been added to the List."
       redirect_to products_path
     else
       render :new, status: :unprocessable_entity
@@ -32,6 +33,7 @@ class ProductsController < ApplicationController
   def update
     @product= Product.find(params[:id])
     if @product.update(product_params)
+      flash[:notice] = "Wine has been updated."
       redirect_to product_path
     else
       render :edit, status: :unprocessable_entity
@@ -41,6 +43,7 @@ class ProductsController < ApplicationController
   def destroy
     @prodcut = Product.find(params[:id])
     @prodcut.destroy
+    flash[:notice] = "Wine has been deleted."
     redirect_to products_path
   end
 
