@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "Wine has been added to the List."
       redirect_to products_path
     else
+      flash[:alert] = "Something went wrong :/"
       render :new, status: :unprocessable_entity
     end
   end
@@ -36,6 +37,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "Wine has been updated."
       redirect_to product_path
     else
+      flash[:alert] = "Something went wrong :/"
       render :edit, status: :unprocessable_entity
     end
   end
