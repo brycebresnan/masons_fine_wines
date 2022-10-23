@@ -3,5 +3,6 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :country_of_origin, presence: true
   validates :cost, presence: true
-  validates :cost, numericality: { greater_than: 0.00 }
+  validates :cost, numericality: { greater_than: 0.00  }
+  validates :cost, numericality: { less_than: 99999.99  }
 end
