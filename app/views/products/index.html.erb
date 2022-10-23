@@ -1,4 +1,4 @@
-<h1>Products</h1>
+<h1>Mason's Wines</h1>
 
 <% if @products.any? %>
   <ul>
@@ -7,10 +7,10 @@
     <% end %>
   </ul>
 <% else %>
-  <p>There are no products yet.</p>
+  <p>There are no wines to view.</p>
 <% end %>
 
 
-<%= button_to "Create new product", 
+<%= button_to "Add Wine to List", 
               new_product_path,
               method: :get %>
