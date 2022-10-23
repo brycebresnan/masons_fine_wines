@@ -2,6 +2,24 @@
 <h3>Country of Origin: <%= @product.country_of_origin %></h3>
 <h3>Price: $<%= @product.cost %></h3>
 
+<% if @product.reviews.any? %>
+  <h4>Here are the reviews for this wine:</h4>
+
+  <% @product.reviews.each do |review| %>
+    <ul>
+      <li>
+        <%= link_to review.author, product_review_path(@product, review) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No reviews have been posted for this wine.</p>
+<% end %>
+
+<%= button_to "Add Reivew",
+              new_product_review_path(@product), 
+              method: :get %>
+
 <%= button_to "Edit Wine", 
               edit_product_path(@product),
               method: :get %>
