@@ -1,0 +1,12 @@
+<h1>Mason's Fine Wines</h1>
+
+<h3>Most Reviewed Wine:</h3>
+<% if @product_most.any? %>
+  <ul>
+    <% @product_most.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no wines to view.</p>
+<% end %>
