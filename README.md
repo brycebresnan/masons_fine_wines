@@ -15,6 +15,7 @@
 * Clone this repository from GitHub.
 * Navigate to the root in command line
 * Run <code>$bundle install</code> to install the required gems.
+* Run <code>$rake db:setup</code> to create the database structure in Active Record.
 * Run <code>$rails s</code> to start the server.
 * Navigate in your browser to http://localhost:3000/
 
