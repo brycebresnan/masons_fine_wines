@@ -2,5 +2,10 @@
 @import "bootstrap";
 
 body {
-  background-image: url("../images/vinograd-vino-fon-urozhai-listia-bokal-butylka.jpg");
+  background: url("top-view-delicious-organic-wine-grapes.jpg") no-repeat center center fixed;;
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding-top: 5%;
 }
