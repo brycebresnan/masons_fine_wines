@@ -11,22 +11,17 @@
 
   <body>
   <div class="container">
-    <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">MFW</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="/products">Wine List</a>
-        </div>
-      </div>
-    </nav>
-      <%= flash[:alert] %>
-      <%= flash[:notice] %>
-      
-      <%= yield %>
+  
+    <% if current_user %>
+      <%= current_user.user_name %> Bryce is a big nerd | <%= link_to "Sign out", '/signout' %>
+    <% else %>
+      <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+    <% end %>
+
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
+    
+    <%= yield %>
     </div>
   </body>
 </html>
