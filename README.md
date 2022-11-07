@@ -19,6 +19,8 @@
 * Run <code>$rails s</code> to start the server.
 * Navigate in your browser to http://localhost:3000/
 
+*Admin: For security, any users that require admin privlidges will have to be given them via the rails console. 
+
 
 ## Known Bugs
 
