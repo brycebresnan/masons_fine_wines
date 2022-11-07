@@ -1,8 +1,14 @@
 Product.destroy_all
 
-100.times do |index|
+50.times do |index|
   Product.create!(name: Faker::Coffee.blend_name,
                   country_of_origin: Faker::Currency.code,
+                  cost: Faker::Number.decimal(l_digits: 2))
+end
+
+5.times do |index|
+  Product.create!(name: Faker::Coffee.blend_name,
+                  country_of_origin: "USA",
                   cost: Faker::Number.decimal(l_digits: 2))
 end
 
@@ -15,3 +21,7 @@ Review.destroy_all
   end
 
 p "Created #{Product.count} wines"
+
+User.destroy_all
+User.create!(email:"user@user.com" , user_name:"UserUser", password:"1234" , password_confirmation:"1234")
+User.create!(email:"admin@admin.com" , user_name:"AdminAdmin", password:"1234" , password_confirmation:"1234", admin: "true")
