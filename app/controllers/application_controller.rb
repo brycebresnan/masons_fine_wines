@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
+  helper_method :is_admin?
 
   def current_user
     if session[:user_id]
@@ -15,12 +16,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def admin
-    if !current_user.admin
+  def admin_authorize
+    if !current_user || !current_user.admin
       flash[:alert] = "You do not have sufficent privileges to do that."
       redirect_to '/'
     end
   end
 
+  def is_admin?
+    current_user && current_user.admin
+  end
 
 end
