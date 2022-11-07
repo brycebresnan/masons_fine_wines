@@ -15,5 +15,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def admin
+    if !current_user.admin
+      flash[:alert] = "You do not have sufficent privileges to do that."
+      redirect_to '/'
+    end
+  end
+
 
 end
