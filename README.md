@@ -2,7 +2,7 @@
 
 #### By Bryce Bresnan <Bryce.Bresnan@gmail.com>
 
-#### A project to demonstrate building and accessing databasses through a browser using ActiveRecord and Ruby on Rails. The theme of the project is a site of products and reviews, which I chose to model off of a wine store run by my dog, Mason. The site allows the user to create, update, and delete Wines, as well as write reviews and leave ratings for the wines. 
+#### A project to demonstrate building and accessing databasses through a browser using ActiveRecord and Ruby on Rails. The theme of the project is a site of products and reviews, which I chose to model off of a wine store run by my dog, Mason.  Using bCrypt authentication, authorized users are able to create, update, and delete Wines, as well as write reviews and leave ratings for the wine which are organized by linked tables in Postgres. In order to test the functionality of the project, I seeded the database using faker. All CRUD functionality is tested using rspec and capybara. 
 
 ## Technologies Used
 
