@@ -10,7 +10,9 @@
   <p>There are no wines to view.</p>
 <% end %>
 
-
+<%if is_admin?%>
 <%= button_to "Add Wine to List", 
               new_product_path,
               method: :get %>
+
+<%end%>
