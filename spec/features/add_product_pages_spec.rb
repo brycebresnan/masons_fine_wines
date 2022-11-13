@@ -1,6 +1,18 @@
 require 'rails_helper'
 
+
+
 describe "the add a product process" do
+
+  before do
+    User.destroy_all
+    admin = User.create!(email:"admin@admin.com" , user_name:"AdminAdmin", password:"1234" , admin: "true")
+    visit signin_path
+    fill_in "Email", :with => 'admin@admin.com'
+    fill_in "Password", :with => '1234'
+    click_button "Sign in"
+  end
+
   it "adds a new product" do
     visit products_path
     click_button "Add Wine to List"
