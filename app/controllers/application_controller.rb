@@ -17,10 +17,10 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_authorize
-    if !current_user || !current_user.admin
-      flash[:alert] = "You do not have sufficent privileges to do that."
-      redirect_to '/'
-    end
+      if !current_user || !current_user.admin
+        flash[:alert] = "You do not have sufficent privileges to do that."
+        redirect_to '/'
+      end
   end
 
   def is_admin?
